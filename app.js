@@ -1,13 +1,13 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
-
 const nomes = new Array();
 const botaoAdd = document.querySelector('[data-botao-add]');
 const botaoSortear = document.querySelector('[data-botao-sortear]');
-const resultado = document.querySelector('[data-resultado]');
 
 function adicionarAmigo(){
-    const nome = document.querySelector('[data-nome]').value.trim();
+    const campoNome = document.querySelector('[data-nome]');
     const lista = document.querySelector('[data-nomes-lista]');
+
+    // Pegar o valor do campo de texto e remover espaços em branco
+    const nome = campoNome.value.trim();
 
     // Se for um nome válido, adiciona ao array nomes.
     validarEntrada(nome) ? nomes.push(nome) : alert('Digite um nome válido');
@@ -15,6 +15,17 @@ function adicionarAmigo(){
     const elementListItem = document.createElement('li'); // criar novo elemento <li></li>
     elementListItem.innerHTML += nome; // <li>nome</li>
     lista.appendChild(elementListItem); // Adiciona o nome na lista de amigos
+
+    campoNome.value = ''; // Limpa o campo de texto
+}
+
+function exibirResultado(){
+    const resultado = document.querySelector('[data-resultado]');
+
+    const elementListItem = document.createElement('li');
+    elementListItem.innerHTML += `Amigo sorteado: ${nomes[sortearAmigo()]}`;
+
+    resultado.appendChild(elementListItem);
 }
 
 function sortearAmigo(){
@@ -30,4 +41,4 @@ function validarEntrada(entrada){
 }
 
 botaoAdd.addEventListener('click', () => adicionarAmigo());
-botaoSortear.addEventListener('click', () => sortearAmigo());
+botaoSortear.addEventListener('click', () => exibirResultado());
