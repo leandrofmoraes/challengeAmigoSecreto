@@ -5,14 +5,14 @@ Challenge proposto na formação "Iniciante em Programação" pela [ONE (Oracle 
 
 ---
 
-## 📜 Resumo
+## 📝 Resumo
 Uma aplicação simples que permite a inserção de nomes em uma lista para, em seguida, realizar um sorteio e determinar quem é o "amigo secreto".
 
 ---
 
 ## 🖼️ Exemplo do projeto em funcionamento.
 
-![Captura de Tela](caminho/para/sua-imagem.png)
+![Captura de Tela](https://github.com/leandrofmoraes/challengeAmigoSecreto/blob/main/screenshots/screenshot_1.jpg)
 
 ---
 
